@@ -23,13 +23,11 @@ export default function Details() {
                 </div>
                 <p className="text">{game.summary}</p>
                 {/* Bonus ( for Guests and Users ) */}
+                {/* TODO create comments functionallity */}
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
                         {/* list all comments for current game (If any) */}
-                        <li className="comment">
-                            <p>Content: I rate this one quite highly.</p>
-                        </li>
                         <li className="comment">
                             <p>Content: The best game.</p>
                         </li>

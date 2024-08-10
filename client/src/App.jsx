@@ -6,6 +6,8 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Catalog from "./components/catalog/Catalog";
 import CreatePage from "./components/create-page/CreatePage";
+import CatalogItem from "./components/catalog/catalog-item/CatalogItem";
+import Details from "./components/details/Details";
 
 function App() {
     return (
@@ -17,6 +19,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/catalog" element={<Catalog />} />
+                    <Route path="/details/:id" element={<Details />} />
                     <Route path="/create" element={<CreatePage />} />
                 </Routes>
             </main>

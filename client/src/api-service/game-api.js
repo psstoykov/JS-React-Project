@@ -8,3 +8,11 @@ export const getAll = async () => {
 
     return games;
 };
+
+
+export const getOne = async (id) => {
+
+    const game = await requester.get(`${BASE_URL}/${id}`);
+
+    return game;
+}

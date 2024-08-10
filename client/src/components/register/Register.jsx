@@ -32,7 +32,7 @@ export default function Register() {
                     <p className="field">
                         <span>
                             If you already have profile click
-                            <a href="#">here</a>
+                            <a href="/login">here</a>
                         </span>
                     </p>
                 </div>

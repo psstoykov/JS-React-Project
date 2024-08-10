@@ -1,4 +1,4 @@
-export default function createPage() {
+export default function CreatePage() {
     return (
         <section id="create-page" className="auth">
             <form id="create">

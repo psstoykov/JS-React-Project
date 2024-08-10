@@ -1,0 +1,26 @@
+{
+    "f18668ae-b9bf-4221-93d8-0c4b41ed6e3f": {
+        "title": "Minecraft",
+        "category": "Survival",
+        "maxLevel": "99",
+        "imageURL": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Minecraft.jpg",
+        "summary": "One of the greatest games ever",
+        "_id": "f18668ae-b9bf-4221-93d8-0c4b41ed6e3f"
+    },
+    "c622e727-0e04-4f12-a7bd-4b499fb7e618": {
+        "title": "Risk of Rain 2",
+        "category": "Looter Shooter",
+        "maxLevel": "99",
+        "imageURL": "https://upload.wikimedia.org/wikipedia/en/c/c1/Risk_of_Rain_2.jpg",
+        "summary": "Too much fun",
+        "_id": "c622e727-0e04-4f12-a7bd-4b499fb7e618"
+    },
+    "daf628f7-887b-4034-ae7a-a033409be3e8": {
+        "title": "Noita",
+        "category": "Rogue-like",
+        "maxLevel": "0",
+        "imageURL": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/881100/capsule_616x353.jpg?t=1675987871",
+        "summary": "The rabbit hole goes deep",
+        "_id": "daf628f7-887b-4034-ae7a-a033409be3e8"
+    }
+}

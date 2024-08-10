@@ -8,7 +8,6 @@ export default function Details() {
     useEffect(() => {
         (async () => {
             const result = await getOne(id);
-            console.log(result);
             setGame(result);
         })();
     }, []);

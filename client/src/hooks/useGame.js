@@ -30,3 +30,15 @@ export function useGetOneGame(gameId) {
 
     return [game, setGame]
 }
+
+
+export function useCreateGame() {
+
+    const createGameHandler = async ({ title, category, maxLevel, imageURL, summary }) => {
+
+        const result = await gamesAPI.create({ title, category, maxLevel, imageURL, summary })
+        return result
+    }
+
+    return createGameHandler
+}

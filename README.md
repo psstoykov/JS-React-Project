@@ -51,8 +51,8 @@ Project Defense
 
 ## 7. Authentication
 
--   [] Auth API
-    -   [ ] Login
+-   [x] Auth API
+    -   [x] Login
     -   [ ] Register
     -   [ ] Logout
 -   [ ] Auth API hook

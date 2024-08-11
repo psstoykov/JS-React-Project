@@ -22,10 +22,10 @@ export const useRegister = () => {
 
 
     const registerHandler = async (email, password) => {
+        //TODO check pass vs password
+        const { pass, ...authData } = await register(email, password);
 
-        const result = await register(email, password);
-
-        changeAuthState(result);
+        changeAuthState(authData);
         return result;
     };
 

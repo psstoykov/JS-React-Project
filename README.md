@@ -53,16 +53,16 @@ Project Defense
 
 -   [x] Auth API
     -   [x] Login
-    -   [ ] Register
+    -   [x] Register
     -   [ ] Logout
 -   [ ] Auth API hook
     -   [x] Login
-    -   [ ] Register
+    -   [x] Register
     -   [ ] Logout
 -   [x] Auth state & context
 -   [x] Token management
--   [ ] Login
--   [ ] Register
+-   [x] Login
+-   [x] Register
     -   [ ] Add form validation
 -   [ ] Logout
 -   [ ] Authorized Requests

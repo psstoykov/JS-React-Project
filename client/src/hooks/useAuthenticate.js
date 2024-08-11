@@ -10,7 +10,7 @@ export const useLogin = () => {
         const result = await login(username, password);
         // update app state
         changeAuthState(result)
-        console.log(result)
+
     }
     return loginHandler
 };

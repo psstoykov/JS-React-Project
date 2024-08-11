@@ -56,10 +56,10 @@ Project Defense
     -   [ ] Register
     -   [ ] Logout
 -   [ ] Auth API hook
-    -   [ ] Login
+    -   [x] Login
     -   [ ] Register
     -   [ ] Logout
--   [ ] Auth state & context
+-   [x] Auth state & context
 -   [ ] Token management
 -   [ ] Login
 -   [ ] Register

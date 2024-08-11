@@ -60,7 +60,7 @@ Project Defense
     -   [ ] Register
     -   [ ] Logout
 -   [x] Auth state & context
--   [ ] Token management
+-   [x] Token management
 -   [ ] Login
 -   [ ] Register
     -   [ ] Add form validation

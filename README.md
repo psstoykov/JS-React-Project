@@ -45,7 +45,7 @@ Project Defense
 
 ## 6. API Hooks
 
--   [ ] Form Hook
+-   [x] Form Hook
 -   [ ] GameAPI Hooks
 -   [ ] Comment Hooks
 

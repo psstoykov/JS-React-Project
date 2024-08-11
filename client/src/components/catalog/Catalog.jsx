@@ -1,18 +1,9 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import * as gamesAPI from "../../api-service/game-api";
+import { useGetAllGames } from "../../hooks/useGame";
 import CatalogItem from "./catalog-item/CatalogItem";
 
 export default function Catalog() {
-    const [games, setGames] = useState([]);
+    const [games, setGames] = useGetAllGames();
 
-    useEffect(() => {
-        gamesAPI.getAll().then((result) => {
-            setGames(result);
-        });
-
-        //TODO change to async function
-    }, []);
     return (
         <section id="catalog-page">
             <h1>All Games</h1>

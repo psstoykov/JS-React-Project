@@ -5,6 +5,7 @@ import LatestGame from "./latest/latestGame";
 export default function Home() {
     const [latest, setLatest] = useState([]);
 
+    //TODO transfer hook to custom hook and fix the latest 3 games functinality
     useEffect(() => {
         (async () => {
             const result = await getAll();

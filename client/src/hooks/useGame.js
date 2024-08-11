@@ -34,11 +34,7 @@ export function useGetOneGame(gameId) {
 
 export function useCreateGame() {
 
-    const createGameHandler = async ({ title, category, maxLevel, imageURL, summary }) => {
+    const createGameHandler = (gameData) => gamesAPI.create(gameData);
 
-        const result = await gamesAPI.create({ title, category, maxLevel, imageURL, summary })
-        return result
-    }
-
-    return createGameHandler
+    return createGameHandler;
 }

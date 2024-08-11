@@ -6,7 +6,7 @@ const initialValues = {
     title: "",
     category: "",
     maxLevel: "",
-    imageUrl: "",
+    imageURL: "",
     summary: "",
 };
 export default function CreatePage() {
@@ -15,15 +15,16 @@ export default function CreatePage() {
 
     const createHandler = async (values) => {
         try {
-            const { _id } = await createGame(values);
-            navigate(`/details/${_id}`);
+            //TODO fix navigation to details of the newly create game
+            const newGame = await createGame(values);
+            console.log(newGame);
+
+            navigate("/");
         } catch (err) {
             console.error(err.message);
-            //TODO set error state and display error
         }
-
-        //navigate
     };
+
     const { values, changeHandler, submitHandler } = useForm(
         initialValues,
         createHandler
@@ -65,8 +66,8 @@ export default function CreatePage() {
                     <input
                         type="text"
                         id="imageUrl"
-                        name="imageUrl"
-                        value={values.imageUrl}
+                        name="imageURL"
+                        value={values.imageURL}
                         onChange={changeHandler}
                         placeholder="Upload a photo..."
                     />

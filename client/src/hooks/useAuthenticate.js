@@ -7,9 +7,10 @@ export const useLogin = () => {
     const { changeAuthState } = useContext(AuthContext);
     const loginHandler = async (username, password) => {
 
-        const result = await login(username, password);
+        const { password: pass, ...authData } = await login(username, password);
         // update app state
-        changeAuthState(result)
+        changeAuthState(authData)
+        return authData;
 
     }
     return loginHandler
@@ -23,10 +24,10 @@ export const useRegister = () => {
 
     const registerHandler = async (email, password) => {
         //TODO check pass vs password
-        const { pass, ...authData } = await register(email, password);
+        const { password: pass, ...authData } = await register(email, password);
 
         changeAuthState(authData);
-        return result;
+        return authData;
     };
 
     return registerHandler;

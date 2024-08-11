@@ -19,5 +19,5 @@ export const getOne = async (id) => {
 
 
 export const create = async (data) => {
-    requester.post(BASE_URL, data)
+    await requester.post(BASE_URL, data)
 }

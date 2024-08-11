@@ -65,12 +65,12 @@ Project Defense
 -   [x] Register
     -   [ ] Add form validation
 -   [ ] Logout
--   [ ] Authorized Requests
+-   [x] Authorized Requests
 
 ## 8. UI Implementation
 
--   [ ] Dynamic navigation
--   [ ] Create game
-    -   [ ] API function
-    -   [ ] Hook
+-   [x] Dynamic navigation
+-   [x] Create game
+    -   [x] API function
+    -   [x] Hook
 -   [ ] Latest games

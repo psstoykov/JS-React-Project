@@ -49,7 +49,7 @@ export default function Login() {
                     />
                     <p className="field">
                         <span>
-                            If you don't have profile click{" "}
+                            If you don't have profile click
                             <a href="/register">here</a>
                         </span>
                     </p>

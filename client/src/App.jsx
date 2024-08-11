@@ -6,7 +6,6 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Catalog from "./components/catalog/Catalog";
 import CreatePage from "./components/create-page/CreatePage";
-import CatalogItem from "./components/catalog/catalog-item/CatalogItem";
 import Details from "./components/details/Details";
 
 function App() {

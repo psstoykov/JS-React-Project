@@ -13,6 +13,7 @@ import { AuthContext } from "./contexts/userAuth";
 function App() {
     //context/state functionality
 
+    //TODO remove this from App component
     const [authState, setAuthState] = useState({});
 
     const changeAuthState = (state) => {
@@ -20,6 +21,7 @@ function App() {
     };
 
     const contextData = {
+        userId: authState._id,
         email: authState.email,
         accessToken: authState.accessToken,
         changeAuthState,

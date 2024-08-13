@@ -1,28 +1,15 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import { getOne, update } from "../../api-service/game-api";
+import { update } from "../../api-service/game-api";
 import { useGetOneGame } from "../../hooks/useGame";
-import { useMemo } from "react";
-const initialValues = {
-    title: "",
-    category: "",
-    maxLevel: "",
-    imageURL: "",
-    summary: "",
-};
 
 export default function EditPage() {
     const navigate = useNavigate();
     const { gameId } = useParams();
     const [game, setGame] = useGetOneGame(gameId);
 
-    const initialFormValues = useMemo(
-        () => Object.assign({}, initialValues, game),
-        [game]
-    );
-
     const { changeHandler, submitHandler, values } = useForm(
-        initialFormValues,
+        game,
         async (values) => {
             try {
                 const updatedGame = await update(gameId, values);

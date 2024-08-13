@@ -26,9 +26,6 @@ async function requesterFunc(method, url, data) {
     }
 
 
-
-
-
     const response = await fetch(url, options);
     //TODO error handling if response status not okay
     if (response.status === 204) {

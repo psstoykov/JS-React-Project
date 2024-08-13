@@ -43,7 +43,6 @@ export const useLogout = () => {
         await logout();
         sessionLogout();
 
-
     }
     return logoutHandler;
 }

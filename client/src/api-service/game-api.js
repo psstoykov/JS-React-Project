@@ -16,12 +16,14 @@ export const getLatest = async () => {
         sortBy: '_createdOn desc',
         pageSize: 3,
     });
-
     const result = await requester.get(`${BASE_URL}?${urlSearchParams.toString()}`);
+    console.log(result)
+
+
+
     const latestGames = Object.values(result);
-
-
     return latestGames
+
 }
 
 export const getOne = async (id) => {

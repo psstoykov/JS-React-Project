@@ -9,6 +9,7 @@ import Catalog from "./components/catalog/Catalog";
 import CreatePage from "./components/create-page/CreatePage";
 import Details from "./components/details/Details";
 import { AuthContext } from "./contexts/userAuth";
+import EditPage from "./components/edit-page/EditPage";
 
 function App() {
     //context/state functionality
@@ -41,6 +42,7 @@ function App() {
                         <Route path="/register" element={<Register />} />
                         <Route path="/catalog" element={<Catalog />} />
                         <Route path="/details/:gameId" element={<Details />} />
+                        <Route path="edit/:gameId" element={<EditPage />} />
                         <Route path="/create" element={<CreatePage />} />
                     </Routes>
                 </main>

@@ -22,4 +22,9 @@ export const create = async (data) => {
     await requester.post(BASE_URL, data)
 }
 
+export const update = (gameId, data) => {
+
+    return requester.put(`${BASE_URL}/${gameId}`, data)
+}
+
 export const deleteGame = (gameId) => requester.del(`${BASE_URL}/${gameId}`);

@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { getOne, update } from "../../api-service/game-api";
 import { useGetOneGame } from "../../hooks/useGame";
+import { useMemo } from "react";
 const initialValues = {
     title: "",
     category: "",
@@ -15,8 +16,13 @@ export default function EditPage() {
     const { gameId } = useParams();
     const [game, setGame] = useGetOneGame(gameId);
 
+    const initialFormValues = useMemo(
+        () => Object.assign({}, initialValues, game),
+        [game]
+    );
+
     const { changeHandler, submitHandler, values } = useForm(
-        Object.assign(initialValues, game),
+        initialFormValues,
         async (values) => {
             try {
                 const updatedGame = await update(gameId, values);

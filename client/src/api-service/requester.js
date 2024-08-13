@@ -1,8 +1,10 @@
+import { getAccessToken } from "../utils/authUtils";
+
 async function requesterFunc(method, url, data) {
 
     const options = {};
 
-    const accessToken = localStorage.getItem('accessToken');
+    const accessToken = getAccessToken();
 
     if (accessToken) {
         options.headers = {
@@ -29,6 +31,9 @@ async function requesterFunc(method, url, data) {
 
     const response = await fetch(url, options);
     //TODO error handling if response status not okay
+    if (response.status === 204) {
+        return;
+    }
     const result = await response.json();
 
     if (!response.ok) {

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import userPersistState from "../hooks/usePersistState";
+import usePersistState from "../hooks/usePersistState";
 
 export const AuthContext = createContext({
     userId: "",
@@ -7,21 +7,26 @@ export const AuthContext = createContext({
     accessToken: "",
     changeAuthState: (authState = {}) => null,
     isAuthenticated: false,
+    logout: () => null,
 });
 
 export function AuthContextProvider(props) {
-    const [authState, setAuthState] = userPersistState("auth", {});
+    const [authState, setAuthState] = usePersistState("auth", {});
     const changeAuthState = (state) => {
         localStorage.setItem("accessToken", state.accessToken);
         setAuthState(state);
     };
+    const logout = () => {
+        setAuthState(null);
+    };
 
     const contextData = {
-        userId: authState._id,
-        email: authState.email,
-        accessToken: authState.accessToken,
+        userId: authState?._id,
+        email: authState?.email,
+        accessToken: authState?.accessToken,
         changeAuthState,
-        isAuthenticated: !!authState.email,
+        isAuthenticated: !!authState?.email,
+        logout,
     };
 
     return (

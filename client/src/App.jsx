@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { AuthContextProvider } from "./contexts/authContext";
 
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
@@ -7,8 +8,8 @@ import Register from "./components/register/Register";
 import Catalog from "./components/catalog/Catalog";
 import CreatePage from "./components/create-page/CreatePage";
 import Details from "./components/details/Details";
-import { AuthContextProvider } from "./contexts/authContext";
 import EditPage from "./components/edit-page/EditPage";
+import Logout from "./components/logout/Logout";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
+                        <Route path="/logout" element={<Logout />} />
                         <Route path="/catalog" element={<Catalog />} />
                         <Route path="/details/:gameId" element={<Details />} />
                         <Route path="edit/:gameId" element={<EditPage />} />

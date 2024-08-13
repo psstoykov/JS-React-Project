@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const AuthContext = createContext({
     userId: "",
@@ -11,7 +11,6 @@ export const AuthContext = createContext({
 export function AuthContextProvider(props) {
     const [authState, setAuthState] = useState({});
     const changeAuthState = (state) => {
-        //TODO fix by implementing persisted authState
         localStorage.setItem("accessToken", state.accessToken);
         setAuthState(state);
     };
@@ -29,4 +28,10 @@ export function AuthContextProvider(props) {
             {props.children}
         </AuthContext.Provider>
     );
+}
+
+export function useAuthContext() {
+    const authData = useContext(AuthContext);
+
+    return authData;
 }

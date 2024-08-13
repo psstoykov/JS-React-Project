@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../contexts/authContext";
+import { useAuthContext } from "../../contexts/authContext";
 
 export default function Header() {
-    const { isAuthenticated, email } = useContext(AuthContext);
+    const { isAuthenticated } = useAuthContext();
     //TODO show email welcome message
     return (
         <header>

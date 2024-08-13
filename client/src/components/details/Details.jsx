@@ -1,9 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useGetOneGame } from "../../hooks/useGame";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/userAuth";
 
 export default function Details() {
+    const { userId, isAuthenticated } = useContext(AuthContext);
     const { gameId } = useParams();
     const [game, setGame] = useGetOneGame(gameId);
+    const isOwner = game._ownerId === userId;
 
     return (
         <section id="game-details">
@@ -30,32 +34,36 @@ export default function Details() {
                     <p className="no-comment">No comments.</p>
                 </div>
                 {/* Edit/Delete buttons ( Only for creator of this game )  */}
-                <div className="buttons">
-                    <a href="#" className="button">
-                        Edit
-                    </a>
-                    <a href="#" className="button">
-                        Delete
-                    </a>
-                </div>
+                {isOwner && (
+                    <div className="buttons">
+                        <a href="#" className="button">
+                            Edit
+                        </a>
+                        <a href="#" className="button">
+                            Delete
+                        </a>
+                    </div>
+                )}
             </div>
             {/* Bonus */}
             {/* Add Comment ( Only for logged-in users, which is not creators of the current game ) */}
-            <article className="create-comment">
-                <label>Add new comment:</label>
-                <form className="form">
-                    <textarea
-                        name="comment"
-                        placeholder="Comment......"
-                        defaultValue={""}
-                    />
-                    <input
-                        className="btn submit"
-                        type="submit"
-                        defaultValue="Add Comment"
-                    />
-                </form>
-            </article>
+            {isAuthenticated && !isOwner ? (
+                <article className="create-comment">
+                    <label>Add new comment:</label>
+                    <form className="form">
+                        <textarea
+                            name="comment"
+                            placeholder="Comment......"
+                            defaultValue={""}
+                        />
+                        <input
+                            className="btn submit"
+                            type="add comment" //TODO it used to be submit
+                            defaultValue="Add Comment"
+                        />
+                    </form>
+                </article>
+            ) : null}
         </section>
     );
 }

@@ -5,9 +5,9 @@ import { AuthContext } from "../contexts/userAuth";
 export const useLogin = () => {
 
     const { changeAuthState } = useContext(AuthContext);
-    const loginHandler = async (username, password) => {
+    const loginHandler = async (email, password) => {
 
-        const { password: pass, ...authData } = await login(username, password);
+        const { password: pass, ...authData } = await login(email, password);
         // update app state
         changeAuthState(authData)
         return authData;

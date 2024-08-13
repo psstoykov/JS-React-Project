@@ -29,6 +29,7 @@ function App() {
         changeAuthState,
         isAuthenticated: !!authState.email,
     };
+
     return (
         <AuthContext.Provider value={contextData}>
             <div id="box">

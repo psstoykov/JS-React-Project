@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/userAuth";
 
 export default function Header() {
     const { isAuthenticated, email } = useContext(AuthContext);
+    //TODO show email welcome message
     return (
         <header>
             {/* Navigation */}

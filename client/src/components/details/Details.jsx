@@ -1,7 +1,7 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetOneGame } from "../../hooks/useGame";
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/userAuth";
+import { AuthContext } from "../../contexts/authContext";
 import { requester } from "../../api-service/requester";
 import { deleteGame } from "../../api-service/game-api";
 

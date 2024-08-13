@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../hooks/useAuthenticate";
 import { useForm } from "../../hooks/useForm";
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/userAuth";
+import { AuthContext } from "../../contexts/authContext";
 
 const initialValue = { email: "", password: "" };
 export default function Login() {

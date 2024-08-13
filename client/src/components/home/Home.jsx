@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAll } from "../../api-service/game-api";
+import { getLatest } from "../../api-service/game-api";
 import LatestGame from "./latest/latestGame";
 
 export default function Home() {
@@ -8,9 +8,9 @@ export default function Home() {
     //TODO transfer hook to custom hook and fix the latest 3 games functinality
     useEffect(() => {
         (async () => {
-            const result = await getAll();
-
-            setLatest(result.reverse().slice(0, 3));
+            const result = await getLatest();
+            console.log(result);
+            setLatest(result);
         })();
     }, []);
     return (

@@ -9,6 +9,20 @@ export const getAll = async () => {
     return games;
 };
 
+//TODO latest games don't work yet
+export const getLatest = async () => {
+
+    const urlSearchParams = new URLSearchParams({
+        sortBy: '_createdOn desc',
+        pageSize: 3,
+    });
+
+    const result = await requester.get(`${BASE_URL}?${urlSearchParams.toString()}`);
+    const latestGames = Object.values(result);
+
+
+    return latestGames
+}
 
 export const getOne = async (id) => {
 

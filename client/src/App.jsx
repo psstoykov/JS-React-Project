@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
 
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
@@ -8,31 +7,12 @@ import Register from "./components/register/Register";
 import Catalog from "./components/catalog/Catalog";
 import CreatePage from "./components/create-page/CreatePage";
 import Details from "./components/details/Details";
-import { AuthContext } from "./contexts/userAuth";
+import { AuthContextProvider } from "./contexts/authContext";
 import EditPage from "./components/edit-page/EditPage";
 
 function App() {
-    //context/state functionality
-
-    //TODO remove this from App component
-    const [authState, setAuthState] = useState({});
-
-    const changeAuthState = (state) => {
-        //TODO fix by implementing persisted authState
-        localStorage.setItem("accessToken", state.accessToken);
-        setAuthState(state);
-    };
-
-    const contextData = {
-        userId: authState._id,
-        email: authState.email,
-        accessToken: authState.accessToken,
-        changeAuthState,
-        isAuthenticated: !!authState.email,
-    };
-
     return (
-        <AuthContext.Provider value={contextData}>
+        <AuthContextProvider>
             <div id="box">
                 <Header />
                 <main id="main-content">
@@ -47,7 +27,7 @@ function App() {
                     </Routes>
                 </main>
             </div>
-        </AuthContext.Provider>
+        </AuthContextProvider>
     );
 }
 

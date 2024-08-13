@@ -13,7 +13,6 @@ export default function EditPage() {
         async (values) => {
             try {
                 const updatedGame = await update(gameId, values);
-                console.log(updatedGame);
 
                 navigate(`/details/${gameId}`);
                 // setGame(updatedGame) instead of navigate as option

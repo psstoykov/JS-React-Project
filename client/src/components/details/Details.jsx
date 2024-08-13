@@ -1,13 +1,24 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useGetOneGame } from "../../hooks/useGame";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/userAuth";
+import { requester } from "../../api-service/requester";
+import { deleteGame } from "../../api-service/game-api";
 
 export default function Details() {
     const { userId, isAuthenticated } = useContext(AuthContext);
     const { gameId } = useParams();
     const [game, setGame] = useGetOneGame(gameId);
     const isOwner = game._ownerId === userId;
+    const navigate = useNavigate();
+    const gameDeleteHandler = async () => {
+        try {
+            await deleteGame(gameId);
+            navigate("/");
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
 
     return (
         <section id="game-details">
@@ -39,7 +50,11 @@ export default function Details() {
                         <a href="#" className="button">
                             Edit
                         </a>
-                        <a href="#" className="button">
+                        <a
+                            href="#"
+                            onClick={gameDeleteHandler}
+                            className="button"
+                        >
                             Delete
                         </a>
                     </div>

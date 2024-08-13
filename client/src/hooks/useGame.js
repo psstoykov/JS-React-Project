@@ -37,4 +37,5 @@ export function useCreateGame() {
     const createGameHandler = (gameData) => gamesAPI.create(gameData);
 
     return createGameHandler;
-}
+};
+

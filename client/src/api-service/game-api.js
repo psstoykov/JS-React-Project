@@ -21,3 +21,5 @@ export const getOne = async (id) => {
 export const create = async (data) => {
     await requester.post(BASE_URL, data)
 }
+
+export const deleteGame = (gameId) => requester.del(`${BASE_URL}/${gameId}`);

@@ -33,7 +33,6 @@ export default function EditPage() {
                         name="title"
                         onChange={changeHandler}
                         value={values.title}
-                        defaultValue=""
                     />
                     <label htmlFor="category">Category:</label>
                     <input
@@ -42,7 +41,6 @@ export default function EditPage() {
                         name="category"
                         onChange={changeHandler}
                         value={values.category}
-                        defaultValue=""
                     />
                     <label htmlFor="levels">MaxLevel:</label>
                     <input
@@ -52,7 +50,6 @@ export default function EditPage() {
                         onChange={changeHandler}
                         value={values.maxLevel}
                         min={1}
-                        defaultValue=""
                     />
                     <label htmlFor="game-img">Image:</label>
                     <input
@@ -61,7 +58,6 @@ export default function EditPage() {
                         name="imageURL"
                         onChange={changeHandler}
                         value={values.imageURL}
-                        defaultValue=""
                     />
                     <label htmlFor="summary">Summary:</label>
                     <textarea
@@ -69,7 +65,6 @@ export default function EditPage() {
                         id="summary"
                         onChange={changeHandler}
                         value={values.summary}
-                        defaultValue={""}
                     />
                     <input
                         className="btn submit"

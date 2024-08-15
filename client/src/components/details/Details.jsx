@@ -10,7 +10,7 @@ import { useCreateComment, useGetAllComments } from "../../hooks/useComment";
 const initialValues = { comment: "" };
 
 export default function Details() {
-    const { userId, isAuthenticated } = useContext(AuthContext);
+    const { userId, isAuthenticated, email } = useContext(AuthContext);
     const { gameId } = useParams();
     const createComment = useCreateComment();
     const [comments, setComments] = useGetAllComments(gameId);
@@ -21,7 +21,10 @@ export default function Details() {
             try {
                 const newComment = await createComment(gameId, comment);
 
-                setComments((oldComments) => [...oldComments, newComment]);
+                setComments((oldComments) => [
+                    ...oldComments,
+                    { ...newComment, owner: { email } },
+                ]);
             } catch (err) {
                 console.error(err.message);
             }
@@ -65,7 +68,9 @@ export default function Details() {
                             {/* list all comments for current game (If any) */}
                             {comments.map((comment) => (
                                 <li key={comment._id} className="comment">
-                                    <p>Username:{comment.comment}</p>
+                                    <p>
+                                        {comment.owner.email}: {comment.comment}
+                                    </p>
                                 </li>
                             ))}
                         </ul>

@@ -73,4 +73,4 @@ Project Defense
 -   [x] Create game
     -   [x] API function
     -   [x] Hook
--   [ ] Latest games
+-   [x] Latest games

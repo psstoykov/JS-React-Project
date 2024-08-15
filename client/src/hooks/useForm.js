@@ -20,7 +20,6 @@ export function useForm(initialValues, submitCallback) {
         e.preventDefault();
 
         await submitCallback(values)
-
         setValues(initialValues);
 
 

@@ -21,7 +21,9 @@ export function useForm(initialValues, submitCallback) {
 
         await submitCallback(values)
 
-        setValues(initialValues) //TODO check this
+        setValues(initialValues);
+
+
 
     }
 

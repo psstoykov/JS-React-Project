@@ -17,8 +17,14 @@ export default function Details() {
     const [game, setGame] = useGetOneGame(gameId);
     const { changeHandler, submitHandler, values } = useForm(
         initialValues,
-        ({ comment }) => {
-            createComment(gameId, comment);
+        async ({ comment }) => {
+            try {
+                const newComment = await createComment(gameId, comment);
+
+                setComments((oldComments) => [...oldComments, newComment]);
+            } catch (err) {
+                console.error(err.message);
+            }
         }
     );
 

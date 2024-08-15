@@ -76,9 +76,13 @@ Project Defense
 
 ## 9. Refactoring
 
-[x] Persist Authentication state
-[x] Comments
+-   [x] Persist Authentication state
+-   [x] Comments
 
 ## 10. Validations
 
+-   [] Form validations
+
 ## 11. Route guards
+
+-   [x] Implement route guards

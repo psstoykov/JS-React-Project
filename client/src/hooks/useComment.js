@@ -14,7 +14,6 @@ export function useGetAllComments(gameId) {
     useEffect(() => {
         (async () => {
             const result = await commentsApi.getAll(gameId)
-            console.log(result)
             setComments(result)
         })()
     }, [gameId])

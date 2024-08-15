@@ -7,13 +7,13 @@ export default function LatestGame({ _id, title, category, imageURL }) {
                 <img src={imageURL} />
             </div>
             <h3>{title}</h3>
-            <div className="rating">
+            {/* <div className="rating">
                 <span>☆</span>
                 <span>☆</span>
                 <span>☆</span>
                 <span>☆</span>
                 <span>☆</span>
-            </div>
+            </div> */}
             <div className="data-buttons">
                 <Link to={`/details/${_id}`} className="btn details-btn">
                     Details

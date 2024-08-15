@@ -3,7 +3,12 @@ import { requester } from "./requester";
 const BASE_URL = 'http://localhost:3030/data/comments';
 
 //TODO check if it should be text ot comment on the request
-const create = async (gameId, comment) => await requester.post(BASE_URL, { gameId, comment });
+const create = async (gameId, comment) => {
+
+    return await requester.post(BASE_URL, { gameId, comment });
+
+}
+
 
 
 const getAll = async (gameId) => {

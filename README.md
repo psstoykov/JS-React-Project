@@ -37,34 +37,33 @@ Project Defense
 
 ## 5. Comments (Advanced)
 
--   [] Create service for nested resource `comments`
--   [] Post comment to server
--   [] Read comments from server
--   [] Add comments in the component
--   [] Clear form
+-   [x] Create service for nested resource `comments`
+-   [x] Post comment to server
+-   [x] Read comments from server
+-   [x] Add comments in the component
+-   [x] Clear form
 
 ## 6. API Hooks
 
 -   [x] Form Hook
 -   [x] GameAPI Hooks
--   [ ] Comment Hooks
+-   [x] Comment Hooks
 
 ## 7. Authentication
 
 -   [x] Auth API
     -   [x] Login
     -   [x] Register
-    -   [ ] Logout
--   [ ] Auth API hook
+    -   [x] Logout
+-   [x] Auth API hook
     -   [x] Login
     -   [x] Register
-    -   [ ] Logout
+    -   [x] Logout
 -   [x] Auth state & context
 -   [x] Token management
 -   [x] Login
 -   [x] Register
-    -   [ ] Add form validation
--   [ ] Logout
+-   [x] Logout
 -   [x] Authorized Requests
 
 ## 8. UI Implementation
@@ -74,3 +73,12 @@ Project Defense
     -   [x] API function
     -   [x] Hook
 -   [x] Latest games
+
+## 9. Refactoring
+
+[x] Persist Authentication state
+[x] Comments
+
+## 10. Validations
+
+## 11. Route guards

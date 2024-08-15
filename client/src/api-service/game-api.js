@@ -17,7 +17,7 @@ export const getLatest = async () => {
     // });
     // const result = await requester.get(`${BASE_URL}?${urlSearchParams.toString()}`);
     const result = await requester.get('http://localhost:3030/data/games?sortBy=_createdOn%20desc&pageSize=3');
-    console.log(result)
+
 
 
 

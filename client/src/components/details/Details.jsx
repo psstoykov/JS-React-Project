@@ -1,14 +1,25 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useGetOneGame } from "../../hooks/useGame";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { requester } from "../../api-service/requester";
 import { deleteGame } from "../../api-service/game-api";
+import { useGetOneGame } from "../../hooks/useGame";
+import { useForm } from "../../hooks/useForm";
+
+const initialValues = { comment: "" };
 
 export default function Details() {
     const { userId, isAuthenticated } = useContext(AuthContext);
     const { gameId } = useParams();
     const [game, setGame] = useGetOneGame(gameId);
+    const { changeHandler, submitHandler, values } = useForm(
+        initialValues,
+        (values) => {
+            console.log(values);
+            console.log(email);
+        }
+    );
+
     const isOwner = game._ownerId === userId;
     const navigate = useNavigate();
     const gameDeleteHandler = async () => {
@@ -71,16 +82,17 @@ export default function Details() {
             {isAuthenticated && !isOwner ? (
                 <article className="create-comment">
                     <label>Add new comment:</label>
-                    <form className="form">
+                    <form className="form" onSubmit={submitHandler}>
                         <textarea
                             name="comment"
                             placeholder="Comment......"
-                            defaultValue={""}
+                            onChange={changeHandler}
+                            value={values.comment}
                         />
                         <input
                             className="btn submit"
-                            type="add comment" //TODO it used to be submit
-                            defaultValue="Add Comment"
+                            type="submit" //TODO it used to be submit
+                            value="Add Comment"
                         />
                     </form>
                 </article>

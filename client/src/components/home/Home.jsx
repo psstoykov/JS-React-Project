@@ -9,7 +9,7 @@ export default function Home() {
     useEffect(() => {
         (async () => {
             const result = await getLatest();
-            console.log(result);
+
             setLatest(result);
         })();
     }, []);

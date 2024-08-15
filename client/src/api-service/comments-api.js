@@ -1,21 +1,21 @@
 import { requester } from "./requester";
 
-const BASE_URL = 'http://localhost:3030/jsonstore/games';
-
-const build_URL = (id) => `${BASE_URL}/${id}`;
-
-const create = (id, username, comment) => requester.post(build_URL(id), { username, comment });
+const BASE_URL = 'http://localhost:3030/data/comments';
 
 
-const getAll = async (id) => {
-    const result = await requester.get(build_URL(id));
+const create = (gameId, username, comment) => requester.post(build_URL(gameId), { username, comment });
+
+
+const getAll = async (gameId) => {
+    const result = await requester.get(build_URL(gameId));
     const comments = Object.values(result);
 
     return comments;
 }
 
-export default {
+const commentsApi = {
     create,
     getAll
 }
+export default commentsApi;
 //TODO continue work on comments functionality

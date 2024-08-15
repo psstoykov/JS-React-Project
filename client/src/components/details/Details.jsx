@@ -5,18 +5,20 @@ import { requester } from "../../api-service/requester";
 import { deleteGame } from "../../api-service/game-api";
 import { useGetOneGame } from "../../hooks/useGame";
 import { useForm } from "../../hooks/useForm";
+import { useCreateComment, useGetAllComments } from "../../hooks/useComment";
 
 const initialValues = { comment: "" };
 
 export default function Details() {
     const { userId, isAuthenticated } = useContext(AuthContext);
     const { gameId } = useParams();
+    const createComment = useCreateComment();
+    const [comments, setComments] = useGetAllComments(gameId);
     const [game, setGame] = useGetOneGame(gameId);
     const { changeHandler, submitHandler, values } = useForm(
         initialValues,
-        (values) => {
-            console.log(values);
-            console.log(email);
+        ({ comment }) => {
+            createComment(gameId, comment);
         }
     );
 
@@ -52,14 +54,19 @@ export default function Details() {
                 {/* TODO create comments functionallity */}
                 <div className="details-comments">
                     <h2>Comments:</h2>
-                    <ul>
-                        {/* list all comments for current game (If any) */}
-                        <li className="comment">
-                            <p>Content: The best game.</p>
-                        </li>
-                    </ul>
-                    {/* Display paragraph: If there are no games in the database */}
-                    <p className="no-comment">No comments.</p>
+                    {comments.length > 0 ? (
+                        <ul>
+                            {/* list all comments for current game (If any) */}
+                            {comments.map((comment) => (
+                                <li key={comment._id} className="comment">
+                                    <p>Username:{comment.comment}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        // {/* Display paragraph: If there are no games in the database */}
+                        <p className="no-comment">No comments.</p>
+                    )}
                 </div>
                 {/* Edit/Delete buttons ( Only for creator of this game )  */}
                 {isOwner && (

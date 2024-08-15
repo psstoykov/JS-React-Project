@@ -2,15 +2,17 @@ import { requester } from "./requester";
 
 const BASE_URL = 'http://localhost:3030/data/comments';
 
+//TODO check if it should be text ot comment on the request
+const create = (gameId, comment) => requester.post(BASE_URL, { gameId, comment });
 
-const create = (gameId, username, comment) => requester.post(build_URL(gameId), { username, comment });
 
+const getAll = (gameId) => {
 
-const getAll = async (gameId) => {
-    const result = await requester.get(build_URL(gameId));
-    const comments = Object.values(result);
+    const params = new URLSearchParams({
+        where: `gameId="${gameId}"`
+    })
+    return requester.get(`${BASE_URL}?${params.toString()}`);
 
-    return comments;
 }
 
 const commentsApi = {
